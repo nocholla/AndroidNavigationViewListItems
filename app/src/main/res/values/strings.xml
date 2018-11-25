@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">nocholla@yahoo.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    
+
     <!-- Recycler View -->
     <string name="recyclerview_grids">RecyclerView with Grids</string>
     <string name="recyclerview_lists">RecyclerView with Lists</string>
