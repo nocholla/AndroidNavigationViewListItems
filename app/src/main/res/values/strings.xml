@@ -12,4 +12,8 @@
     <string name="recyclerview_grids">RecyclerView with Grids</string>
     <string name="recyclerview_lists">RecyclerView with Lists</string>
 
+    <!-- Menu -->
+    <string name="menu_grids">Grids</string>
+    <string name="menu_lists">Lists</string>
+
 </resources>
