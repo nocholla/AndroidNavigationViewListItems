@@ -3,6 +3,7 @@ package com.nocholla.navigationviewlistitems.fragments.list;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +23,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +33,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import com.bumptech.glide.Glide;
 import com.nocholla.navigationviewlistitems.R;
+import com.nocholla.navigationviewlistitems.adapter.grid.GalleryGridAdapter;
 import com.nocholla.navigationviewlistitems.adapter.list.GalleryListAdapter;
 import com.nocholla.navigationviewlistitems.model.Image;
 
@@ -70,10 +74,26 @@ public class FragmentLeftList extends Fragment {
                     bundle.putSerializable("images", images);
                     bundle.putInt("position", position);
 
-//                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-//                    SlideshowDialogFragment newFragment = SlideshowDialogFragment.newInstance();
-//                    newFragment.setArguments(bundle);
-//                    newFragment.show(ft, "slideshow");
+                    //Toast.makeText(getContext(), "Image Clicked", Toast.LENGTH_SHORT).show();
+
+                    FragmentRightList fragmentRightList = new FragmentRightList();
+                    fragmentRightList.setArguments(bundle);
+
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+
+                    FragmentManager fragmentManager = activity.getSupportFragmentManager();
+
+                    // Get right Fragment Object
+                    Fragment rightFragment = fragmentManager.findFragmentById(R.id.fragment_right_list);
+
+                    // Get the View Object in right Fragment
+                    final View rightFragmentFullImage = rightFragment.getView().findViewById(R.id.img_fullscreen_list);
+
+                    final Image image = images.get(position);
+
+                    Glide.with(getActivity()).load(image.getUrl())
+                            .thumbnail(0.5f)
+                            .into((ImageView) rightFragmentFullImage);
                 }
 
                 @Override
