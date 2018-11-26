@@ -31,10 +31,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import java.util.ArrayList;
 import com.nocholla.navigationviewlistitems.R;
 import com.nocholla.navigationviewlistitems.adapter.GalleryAdapter;
-import com.nocholla.navigationviewlistitems.helper.GalleryGridSpacingItemDecoration;
 import com.nocholla.navigationviewlistitems.model.Image;
 
 
