@@ -63,6 +63,25 @@ public class FragmentLeftList extends Fragment {
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             recyclerView.setAdapter(mAdapter);
 
+            recyclerView.addOnItemTouchListener(new GalleryListAdapter.RecyclerTouchListener(getContext(), recyclerView, new GalleryListAdapter.ClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("images", images);
+                    bundle.putInt("position", position);
+
+//                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+//                    SlideshowDialogFragment newFragment = SlideshowDialogFragment.newInstance();
+//                    newFragment.setArguments(bundle);
+//                    newFragment.show(ft, "slideshow");
+                }
+
+                @Override
+                public void onLongClick(View view, int position) {
+
+                }
+            }));
+
             // Get Images
             getImages();
         }

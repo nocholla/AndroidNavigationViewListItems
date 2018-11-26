@@ -2,6 +2,9 @@ package com.nocholla.navigationviewlistitems.fragments.grid;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,11 +12,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import com.bumptech.glide.Glide;
 import com.nocholla.navigationviewlistitems.R;
 import com.nocholla.navigationviewlistitems.adapter.grid.GalleryGridAdapter;
 import com.nocholla.navigationviewlistitems.helper.GalleryGridSpacingItemDecoration;
@@ -53,6 +59,41 @@ public class FragmentLeftGrid extends Fragment {
             // Add spacing between photos in gallery
             int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.grid_layout_margin);
             recyclerView.addItemDecoration(new GalleryGridSpacingItemDecoration(2, spacingInPixels, true, 0));
+
+            recyclerView.addOnItemTouchListener(new GalleryGridAdapter.RecyclerTouchListener(getContext(), recyclerView, new GalleryGridAdapter.ClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("images", images);
+                    bundle.putInt("position", position);
+
+                    //Toast.makeText(getContext(), "Image Clicked", Toast.LENGTH_SHORT).show();
+
+                    FragmentRightGrid fragmentRightGrid = new FragmentRightGrid();
+                    fragmentRightGrid.setArguments(bundle);
+
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+
+                    FragmentManager fragmentManager = activity.getSupportFragmentManager();
+
+                    // Get right Fragment Object
+                    Fragment rightFragment = fragmentManager.findFragmentById(R.id.fragment_right_grid);
+
+                    // Get the View Object in right Fragment
+                    final View rightFragmentFullImage = rightFragment.getView().findViewById(R.id.img_fullscreen_grid);
+
+                    final Image image = images.get(position);
+
+                    Glide.with(getActivity()).load(image.getUrl())
+                            .thumbnail(0.5f)
+                            .into((ImageView) rightFragmentFullImage);
+                }
+
+                @Override
+                public void onLongClick(View view, int position) {
+
+                }
+            }));
 
             // Get Images
             getImages();

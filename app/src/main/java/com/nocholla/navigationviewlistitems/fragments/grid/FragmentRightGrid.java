@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.nocholla.navigationviewlistitems.R;
 
+
 public class FragmentRightGrid extends Fragment {
 
     public FragmentRightGrid() {
@@ -22,3 +23,5 @@ public class FragmentRightGrid extends Fragment {
     }
 
 }
+
+
