@@ -1,0 +1,29 @@
+{
+	"galleryfeed": [
+		{
+			"name": "Nature 1",
+			"url": "https://farm1.staticflickr.com/965/40889426105_7fe514d470.jpg",
+			"timestamp": "November 2018"
+		},
+		{
+			"name": "Nature 2",
+			"url": "https://farm1.staticflickr.com/972/40889427935_fa4c2cf504.jpg",
+			"timestamp": "November 2018"
+		},
+		{
+			"name": "Nature 3",
+			"url": "https://farm1.staticflickr.com/827/40889429365_17b6757809.jpg",
+			"timestamp": "November 2018"
+		},
+		{
+			"name": "Nature 4",
+			"url": "https://farm1.staticflickr.com/978/39981277690_e025237e1a.jpg",
+			"timestamp": "November 2018"
+		},
+		{
+			"name": "Nature 5",
+			"url": "https://farm1.staticflickr.com/951/40889433175_6a80a03558.jpg",
+			"timestamp": "NovemberNovember 2018"
+		}
+	]
+}
