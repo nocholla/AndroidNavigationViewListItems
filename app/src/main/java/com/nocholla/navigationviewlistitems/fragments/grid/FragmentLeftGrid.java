@@ -2,10 +2,8 @@ package com.nocholla.navigationviewlistitems.fragments.grid;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +15,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import com.nocholla.navigationviewlistitems.R;
-import com.nocholla.navigationviewlistitems.adapter.GalleryGridAdapter;
+import com.nocholla.navigationviewlistitems.adapter.grid.GalleryGridAdapter;
 import com.nocholla.navigationviewlistitems.helper.GalleryGridSpacingItemDecoration;
 import com.nocholla.navigationviewlistitems.model.Image;
 

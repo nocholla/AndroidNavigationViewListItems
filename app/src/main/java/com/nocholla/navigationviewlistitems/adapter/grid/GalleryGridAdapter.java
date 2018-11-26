@@ -1,4 +1,4 @@
-package com.nocholla.navigationviewlistitems.adapter;
+package com.nocholla.navigationviewlistitems.adapter.grid;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

@@ -32,14 +32,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import com.nocholla.navigationviewlistitems.R;
-import com.nocholla.navigationviewlistitems.adapter.GalleryAdapter;
+import com.nocholla.navigationviewlistitems.adapter.list.GalleryListAdapter;
 import com.nocholla.navigationviewlistitems.model.Image;
 
 
 public class FragmentLeftList extends Fragment {
-    private String TAG = FragmentLeftList.class.getSimpleName();
     private ArrayList<Image> images;
-    private GalleryAdapter mAdapter;
+    private GalleryListAdapter mAdapter;
     private RecyclerView recyclerView;
 
     public FragmentLeftList() {
@@ -55,7 +54,7 @@ public class FragmentLeftList extends Fragment {
             recyclerView = retView.findViewById(R.id.recycler_view_list);
 
             images = new ArrayList<>();
-            mAdapter = new GalleryAdapter(getContext(), images);
+            mAdapter = new GalleryListAdapter(getContext(), images);
             mAdapter.notifyDataSetChanged();
 
             // Linear Layout

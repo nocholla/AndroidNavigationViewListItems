@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="match_parent">
 
-    <!-- Fragment Left List -->
+    <!-- Fragment Left List-->
     <fragment
         android:id="@+id/fragment_left_list"
         android:layout_width="@dimen/layout_width_zero"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:name="com.nocholla.navigationviewlistitems.fragments.list.FragmentLeftList"/>
+        android:name="com.nocholla.navigationviewlistitems.fragments.list.FragmentLeftList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragment_right_list"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- Fragment Right List -->
     <fragment
         android:id="@+id/fragment_right_list"
         android:layout_width="@dimen/layout_width_zero"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:name="com.nocholla.navigationviewlistitems.fragments.list.FragmentRightList"/>
+        android:name="com.nocholla.navigationviewlistitems.fragments.list.FragmentRightList"
+        app:layout_constraintStart_toEndOf="@+id/fragment_left_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
+
+
+
