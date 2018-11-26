@@ -15,11 +15,9 @@ import android.view.ViewGroup;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.nocholla.navigationviewlistitems.R;
-import com.nocholla.navigationviewlistitems.adapter.GalleryAdapter;
-import com.nocholla.navigationviewlistitems.fragments.list.FragmentLeftList;
+import com.nocholla.navigationviewlistitems.adapter.GalleryGridAdapter;
 import com.nocholla.navigationviewlistitems.helper.GalleryGridSpacingItemDecoration;
 import com.nocholla.navigationviewlistitems.model.Image;
 
@@ -28,9 +26,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class FragmentLeftGrid extends Fragment {
-    private String TAG = FragmentLeftList.class.getSimpleName();
     private ArrayList<Image> images;
-    private GalleryAdapter mAdapter;
+    private GalleryGridAdapter mAdapter;
     private RecyclerView recyclerView;
 
     public FragmentLeftGrid() {
@@ -46,7 +43,7 @@ public class FragmentLeftGrid extends Fragment {
             recyclerView = retView.findViewById(R.id.recycler_view_grid);
 
             images = new ArrayList<>();
-            mAdapter = new GalleryAdapter(getContext(), images);
+            mAdapter = new GalleryGridAdapter(getContext(), images);
             mAdapter.notifyDataSetChanged();
 
             // Grid Layout
