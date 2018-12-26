@@ -1,4 +1,4 @@
-# EdurekaNavigationViewListItems
+# Android NavigationView List Items
 
 ![navigation view list items 1](https://user-images.githubusercontent.com/801612/50356629-97ba7500-0507-11e9-92e7-af44c1fa4218.jpeg)
 
